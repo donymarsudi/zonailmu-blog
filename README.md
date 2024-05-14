@@ -9,4 +9,5 @@
   <li>Bootstrap</li>
   <li>NodeJS</li>
   <li>ExpressJS</li>
+  <li>EJS</li>
 </ul>
