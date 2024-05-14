@@ -1,0 +1,306 @@
+<!-- Beranda -->
+<section class="beranda mb-5" id="beranda">
+  <div class="container ps-4 ps-sm-0 pe-4 pe-sm-0">
+    <div class="row gap-3 mt-3">
+      <div class="col-lg-7 slide-article position-relative">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% slides.forEach(article => { %>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img
+                src="img/article/<%- article.image %>"
+                class="d-block w-100"
+                alt="<%= article.judul %>"
+              />
+              <div class="carousel-caption d-none d-md-block desc-article">
+                <div class="info position-absolute">
+                  <a
+                    href="/category/<%= article.kategori %>"
+                    class="text-decoration-none"
+                  >
+                    <p
+                      class="category rounded-5 ps-2 pe-2 bg-info text-white mb-2 m-auto text-capitalize"
+                    >
+                      <%= article.kategori %>
+                    </p>
+                  </a>
+                  <a href="<%= article.url %>" class="text-decoration-none">
+                    <h2 class="text-white text-uppercase fs-3 fw-light">
+                      <%= article.judul %>
+                    </h2>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Menggantikan Slide -->
+      <div class="row gap-3 justify-content-center p-0 m-0 replace-slide">
+        <% slides.forEach(article => { %>
+        <div class="col-lg-12 col-sm-5 flex-grow-1 position-relative p-0">
+          <img
+            src="img/article/<%= article.image %>"
+            alt="<%= article.judul %>"
+            class="d-block h-100 w-100 p-0 m-0 side-top-article"
+          />
+          <div class="desc-article">
+            <div class="position-absolute info">
+              <a
+                href="/category/<%= article.kategori %>"
+                class="text-decoration-none bg-info d-block text-white ps-2 pe-2 category rounded-5 mb-1 text-capitalize"
+                style="font-size: 0.8rem"
+              >
+                <%= article.kategori %>
+              </a>
+              <a href="<%= article.url %>" class="text-decoration-none">
+                <h2 class="fs-5 text-white fw-light mb-2">
+                  <%= article.judul %>
+                </h2>
+              </a>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <!-- Sidebar Top Content -->
+      <div class="col-lg-4 sidebar-top-content">
+        <div class="row d-flex gap-3 justify-content-center p-0">
+          <% sideTopArticle.forEach(article => { %>
+          <div class="col-lg-12 col-sm-5 flex-grow-1 position-relative p-0">
+            <img
+              src="img/article/<%= article.image %>"
+              alt="<%= article.judul %>"
+              class="d-block w-100 p-0 m-0 side-top-article"
+            />
+            <div class="desc-article">
+              <div class="position-absolute info">
+                <a
+                  href="/category/<%= article.kategori %>"
+                  class="text-decoration-none bg-info d-block text-white ps-2 pe-2 category rounded-5 mb-1 text-capitalize"
+                  style="font-size: 0.8rem"
+                >
+                  <%= article.kategori %>
+                </a>
+                <a href="<%= article.url %>" class="text-decoration-none">
+                  <h2 class="fs-5 text-white fw-light mb-2">
+                    <%= article.judul %>
+                  </h2>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content -->
+<main class="container pt-3 pb-3">
+  <div class="row">
+    <!-- Main Section -->
+    <section class="col-lg-8">
+      <!-- Top Article -->
+      <article class="top-article" id="top-article">
+        <div class="ps-4 ps-sm-0 pe-4 pe-sm-0">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="fs-2 mb-4">
+                <a href="#" class="text-decoration-none text-dark"
+                  >Artikel Utama</a
+                >
+              </h1>
+              <div class="row">
+                <% 
+                const limitWords = (text, limit) => { 
+                  const words = text.split(" "); 
+                  if (words.length > limit) { 
+                    return words.slice(0, limit).join(" ") + ". . ."; 
+                  } 
+                return text; 
+              };
+                articles.forEach(article => { %>
+                <div class="col-12 mb-5">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <img
+                        src="img/article/<%= article.image %>"
+                        alt="<%= article.judul %>"
+                        class="w-100 h-100"
+                      />
+                    </div>
+                    <div class="col-lg-8">
+                      <a
+                        href="/category/<%= article.kategori %>"
+                        class="text-decoration-none"
+                      >
+                        <p
+                          class="category rounded-5 ps-2 pe-2 bg-info text-white mb-2 mt-3 mt-lg-0 text-capitalize"
+                        >
+                          <%= article.kategori%>
+                        </p>
+                      </a>
+                      <a
+                        href="<%= article.url %>"
+                        class="text-dark d-block text-decoration-none"
+                      >
+                        <h2 class="fs-5"><%= article.judul %></h2>
+                      </a>
+                      <p class="sub-article">
+                        <%= limitWords(article.artikel, 20) %>
+                      </p>
+                      <a href="<%= article.url %>" class="btn btn-success"
+                        >Baca Selengkapnya</a>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Popular -->
+      <article class="popular pt-3" id="popular">
+        <h1 class="fs-2 mb-4">
+          <a href="#" class="text-decoration-none text-dark"
+            >Artikel Terpopuler</a
+          >
+        </h1>
+        <div class="row">
+          <% popularArticles.forEach(article => { %>
+          <div class="col-sm-4">
+            <div class="card border border-0 rounded-0 mb-3">
+              <img
+                src="img/article/<%= article.image %>"
+                alt="<%= article.judul %>"
+                class="w-100 rounded-0"
+                style="height: 150px"
+              />
+              <div class="card-description">
+                <div class="d-flex mt-2 flex-nowrap align-items-center">
+                  <p class="card-category fw-bold text-info text-capitalize">
+                    <%= article.kategori %>
+                  </p>
+                </div>
+                <h5 class="card-title mb-2">
+                  <a href="<%= article.url %>" class="text-dark">
+                    <%= article.judul %>
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </article>
+
+      <!-- Trending Topik -->
+      <article class="trending pt-3 mt-5" id="trending">
+        <h1 class="fs-2 mb-4">Trending Topik Hari Ini</h1>
+        <div class="row">
+          <div class="col-lg-4 col-md-3 col-sm-6 mb-4">
+            <div class="row trending-post">
+              <div class="col-lg-6">
+                <img src="img/article/belajar.jpg" alt="" class="w-100 h-100" />
+              </div>
+              <div class="col-lg-6 col-link-post">
+                <h2 class="describe-trending-post">
+                  <a href="#"
+                    >Tips Lulus UTBK-SNBT 2024, Jangan Sampai Lengah.</a
+                  >
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-3 col-sm-6 mb-4">
+            <div class="row trending-post">
+              <div class="col-lg-6">
+                <img src="img/article/belajar.jpg" alt="" class="w-100 h-100" />
+              </div>
+              <div class="col-lg-6 col-link-post">
+                <h2 class="describe-trending-post">
+                  <a href="#"
+                    >Tips Lulus UTBK-SNBT 2024, Jangan Sampai Lengah.</a
+                  >
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-3 col-sm-6 mb-4">
+            <div class="row trending-post">
+              <div class="col-lg-6">
+                <img src="img/article/belajar.jpg" alt="" class="w-100 h-100" />
+              </div>
+              <div class="col-lg-6 col-link-post">
+                <h2 class="describe-trending-post">
+                  <a href="#"
+                    >Tips Lulus UTBK-SNBT 2024, Jangan Sampai Lengah.</a
+                  >
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-3 col-sm-6 mb-4">
+            <div class="row trending-post">
+              <div class="col-lg-6">
+                <img src="img/article/belajar.jpg" alt="" class="w-100 h-100" />
+              </div>
+              <div class="col-lg-6 col-link-post">
+                <h2 class="describe-trending-post">
+                  <a href="#"
+                    >Tips Lulus UTBK-SNBT 2024, Jangan Sampai Lengah.</a
+                  >
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-3 col-sm-6 mb-4">
+            <div class="row trending-post">
+              <div class="col-lg-6">
+                <img src="img/article/belajar.jpg" alt="" class="w-100 h-100" />
+              </div>
+              <div class="col-lg-6 col-link-post">
+                <h2 class="describe-trending-post">
+                  <a href="#"
+                    >Tips Lulus UTBK-SNBT 2024, Jangan Sampai Lengah.</a
+                  >
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <!-- Sidebar Section-->
+    <%- include('aside') %>
+  </div>
+</main>

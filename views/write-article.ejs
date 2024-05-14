@@ -1,0 +1,42 @@
+<section class="write container pt-5">
+  <form action="/write" method="post" enctype="multipart/form-data">
+    <div class="row">
+      <% if (message.length > 0 ) { %>
+      <span class="d-block text-center text-danger"><%= message %></span>
+      <% } %>
+      <div class="col-md-8">
+        <div class="mb-3">
+          <label for="judulAritikelInput" class="form-label"
+            >Judul Artikel</label
+          >
+          <input
+            type="text"
+            class="form-control fs-3 fw-medium"
+            id="judulAritikelInput"
+            name="judul"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="contentArticle" class="mb-2">Artikel Anda</label>
+          <textarea
+            class="form-control"
+            id="contentArticle"
+            name="artikel"
+          ></textarea>
+        </div>
+      </div>
+      <div class="col-md-4 mt-5 mt-md-0">
+        <label for="img">Tambahkan Gambar Pada Postingan</label>
+        <div class="img border rounded-circle overflow-hidden">
+          <img src="img.png" alt="" class="w-100 h-100" />
+        </div>
+        <input type="file" id="img" name="image" accept="image" />
+        <label for="kategori" class="mt-5">Kategori :</label>
+        <input type="text" id="kategori" name="kategori" class="form-control" />
+        <label for="url" class="mt-5">URL :</label>
+        <input type="text" id="url" name="url" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary pe-4 ps-4">Post</button>
+    </div>
+  </form>
+</section>

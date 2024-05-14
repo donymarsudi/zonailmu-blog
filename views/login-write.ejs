@@ -1,0 +1,40 @@
+<div
+  class="container form-author d-flex justify-content-center align-items-center flex-column"
+>
+  <% if (message) { %>
+  <span class="text-center d-block text-danger"><%= message %></span>
+  <% } %>
+  <h1 class="text-center fw-bold opacity-50 mb-3">Welcome Back Sir</h1>
+  <form action="/write-login" method="post" class="mb-5 pb-5">
+    <div class="row mb-3">
+      <label for="email" class="col-md-2 col-form-label">Email</label>
+      <div class="col-md-10">
+        <input
+          type="email"
+          class="form-control border-0 rounded-0 bg-body-secondary"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="password" class="col-md-2 col-form-label">Password</label>
+      <div class="col-md-10">
+        <input
+          type="password"
+          required
+          class="form-control border-0 rounded-0 bg-body-secondary"
+          id="password"
+          name="password"
+        />
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-info text-white fw-medium rounded-0 w-100"
+    >
+      Masuk
+    </button>
+  </form>
+</div>

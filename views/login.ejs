@@ -1,0 +1,54 @@
+<div
+  class="container form-author d-flex justify-content-center align-items-center"
+>
+  <form action="/login" method="post" class="mb-5 pb-5">
+    <h1 class="text-center fw-bold opacity-50 mb-3">Welcome Sir</h1>
+    <p class="text-center opacity-25">
+      Isi form berikut dan dapatkan informasi terupdate dari zonailmu.com
+    </p>
+    <div class="row mb-3">
+      <label for="inputUsername" class="col-md-2 col-form-label">Nama</label>
+      <div class="col-md-10">
+        <input
+          type="text"
+          class="form-control border-0 rounded-0 bg-body-secondary"
+          id="inputUsername"
+          name="nama"
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-md-2 col-form-label">Email</label>
+      <div class="col-md-10">
+        <input
+          type="email"
+          required
+          class="form-control border-0 rounded-0 bg-body-secondary"
+          id="inputEmail3"
+          name="email"
+        />
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+        name="checkbox"
+        required
+      />
+      <label
+        class="form-check-label opacity-25"
+        for="exampleCheck1"
+        style="font-size: 0.9rem"
+        >Izinkan zonailmu.com mengirimkan notifikasi kepada Anda</label
+      >
+    </div>
+    <button
+      type="submit"
+      class="btn btn-info text-white fw-medium rounded-0 w-100"
+    >
+      Sign in
+    </button>
+  </form>
+</div>

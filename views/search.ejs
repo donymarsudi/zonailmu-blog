@@ -1,0 +1,36 @@
+<div class="container pb-5 pt-5">
+  <form action="/search" method="post">
+    <label for="search" class="fs-3 fw-medium">Mencari Sesuatu?</label>
+    <input
+      type="search"
+      class="form-control border-white bg-success-subtle rounded-0 pt-3 pb-3 mt-3 mb-3"
+      placeholder="Ketikan Kata Kunci Pencarian . . ."
+      name="search"
+    />
+    <button type="submit" class="btn btn-success">Cari Cepat</button>
+  </form>
+  <% if (searchResult.length === 0) { %>
+  <h1 class="text-secondary mt-4 p-5 opacity-25 text-center">
+    Artikel Tidak Ditemukan . . .
+  </h1>
+  <% } else { %>
+    <div class="row mt-5">
+      <span class="d-block opacity-25 mb-3">Hasil Pencarian Dari : "<%= searchValue.search %>"</span>
+    <% searchResult.forEach(article => { %>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+      <div class="card">
+        <img
+          src="img/article/<%= article.image %>"
+          class="card-img-top"
+          alt="<%= article.judul %>"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= article.judul %></h5>
+          <a href="<%= article.url %>" class="text-success">Tampilkan</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg ps-4 ps-sm-0 pe-4 pe-sm-0">
+  <div class="container">
+    <a class="navbar-brand fs-2 fw-medium text-success" href="/">Zona Ilmu</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav m-auto mb-2 mb-lg-0 pt-4 pt-lg-0 pb-4 pb-lg-0">
+        <a class="nav-link" href="/category/pendidikan">Pendidikan</a>
+        <a class="nav-link" href="/category/kesehatan">Kesehatan</a>
+        <a class="nav-link" href="/category/teknologi">Teknologi</a>
+        <a class="nav-link" href="/category/produk">Produk</a>
+      </div>
+      <form
+        class="d-flex search-bar bg-secondary-subtle justify-content-between"
+        role="search"
+        action="/search"
+        method="post"
+      >
+        <input
+          class="me-2 rounded-5"
+          type="input"
+          placeholder="Search"
+          aria-label="Search"
+          name="search"
+        />
+        <button class="btn" type="submit">
+          <i class="bi bi-search text-info"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,24 @@
+<div class="container pb-5 pt-5">
+  <div class="row mt-5">
+    <h1 class="fw-bold opacity-25 fs-2 mb-3 text-capitalize">
+      Kategori : <%= content.category %>
+    </h1>
+    <% if (category.length > 0 ) { %>
+        <% category.forEach(c => { %>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <div class="card">
+                <img src="../img/article/<%= c.image %>" class="card-img-top" alt="<%= c.judul %>" />
+                <div class="card-body">
+                  <h5 class="card-title"><%= c.judul %></h5>
+                  <a href="<%= c.url %>" class="text-success">Tampilkan</a>
+                </div>
+              </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+    <h1 class="text-center fw-light opacity-25">
+      Artikel Tidak Ditemukan . . .
+    </h1>
+    <% } %>
+  </div>
+</div>

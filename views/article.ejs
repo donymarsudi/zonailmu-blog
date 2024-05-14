@@ -1,0 +1,27 @@
+<!-- Content -->
+<main class="main container">
+  <span class="breadcrumb d-flex gap-2 mb-4 mt-4 ms-5">
+    <a href="/" class="text-success">Home</a>
+    <p>/</p>
+    <a href="<%= article.url %>" class="text-success"><%= article.judul %></a>
+  </span>
+  <div class="row">
+    <!-- Article -->
+    <article class="col-lg-8 content-article pe-4 ps-4 p-md-0 mb-5 mb-lg-0">
+      <p
+        class="category bg-info text-white pe-2 ps-2 rounded-5 text-capitalize"
+      >
+        <%= article.kategori %>
+      </p>
+      <h1 class="fw-normal fs-2"><%= article.judul %></h1>
+      <img
+        src="img/article/<%= article.image %>"
+        alt="<%= article.judul %>"
+        class="d-block m-auto mt-4 mb-3 rounded-3"
+      />
+      <p class="paragraf-article"><%= article.artikel %></p>
+    </article>
+    <!-- Sidebar -->
+    <%- include('aside') %>
+  </div>
+</main>
