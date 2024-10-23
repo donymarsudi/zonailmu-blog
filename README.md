@@ -1,12 +1,11 @@
-<p>Bahan belajar FullStack Web Development.</p>
+<h2>Dony Marsudi Web Project!</h2>
 </br>
-<p>Teknologi :</p>
-
+<p>Project Type: Blog</p>
+<p>Project Name: ZonaIlmu</p>
+<p>Stack Technology: </p>
 <ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JS</li>
   <li>Bootstrap</li>
+  <li>JavaScript</li>
   <li>NodeJS</li>
   <li>ExpressJS</li>
   <li>EJS</li>
